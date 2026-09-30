@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EduGenie — Gemini Powered Learning Assistant</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">E</div>
+      <div>
+        <h1>EduGenie</h1>
+        <span>Gemini Powered Learning Assistant</span>
+      </div>
+    </div>
+    <div class="status" id="status">Checking AI connection…</div>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <h2>Learning modes</h2>
+      <button class="mode active" data-mode="explain">💡 Explain a topic</button>
+      <button class="mode" data-mode="quiz">📝 Generate a quiz</button>
+      <button class="mode" data-mode="flashcards">🧠 Make flashcards</button>
+      <button class="mode" data-mode="plan">📅 Study plan</button>
+
+      <div class="progress-card">
+        <div class="progress-title">My progress</div>
+        <div class="progress-ring"><span id="progressValue">0%</span></div>
+        <p id="progressText">Start your first learning session.</p>
+        <button id="clearProgress" class="secondary">Reset progress</button>
+      </div>
+    </aside>
+
+    <section class="content">
+      <div class="hero">
+        <div>
+          <p class="eyebrow">AI LEARNING WORKSPACE</p>
+          <h2 id="heroTitle">What would you like to learn?</h2>
+          <p id="heroText">Ask EduGenie to explain a concept in simple language, with examples.</p>
+        </div>
+      </div>
+
+      <div class="suggestions">
+        <button class="suggestion">Explain photosynthesis</button>
+        <button class="suggestion">Teach me Newton's laws</button>
+        <button class="suggestion">Explain the water cycle</button>
+        <button class="suggestion">Help me revise algebra</button>
+      </div>
+
+      <div id="chat" class="chat"></div>
+
+      <form id="composer" class="composer">
+        <textarea id="message" rows="3" placeholder="Type a topic or question…"></textarea>
+        <div class="composer-bottom">
+          <span>EduGenie uses Gemini for AI-generated learning support.</span>
+          <button type="submit" id="send">Ask EduGenie</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <span>EduGenie Project • Educational prototype</span>
+    <span>Keep your Gemini API key on the server — never in frontend code.</span>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>
